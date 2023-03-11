@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Alert from "./components/Alert";
+import Sidebar from "./components/sidebar/Sidebar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
+
 
 function App() {
+  useEffect(()=>{
+    let token=localStorage.getItem("token");
+    if(token){
+
+      toast.success("Welcome Back!");
+    }
+  },[])
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="layout">
+    
+      <Sidebar />
+      <div className="right">
+        <h1
+          style={{
+            textAlign: "center",
+            color: "white",
+            borderBottom: "1px solid black",
+            backgroundColor: "rgb(21, 21, 21)",
+            width: "100%",
+            padding: "10px 0px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          INVENTORY MANAGEMENT SYSTEM
+        </h1>
+        <div style={{ width: "90%", margin: "auto" }}>
+          <Outlet />
+        </div>
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+      </div>
     </div>
   );
 }
