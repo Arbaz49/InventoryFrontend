@@ -15,7 +15,7 @@ const Login = () => {
   const navigate=useNavigate();
     const handleSignin=async()=>{
       try{
-        const {data}=await axios.post("http://localhost:8000/api/v1/auth/login",{email:email,password:password})
+        const {data}=await axios.post("https://inventorybackend-otug.onrender.com/api/v1/auth/login",{email:email,password:password})
         console.log(data)
         localStorage.setItem("token",data.token);
         localStorage.setItem("user",JSON.stringify(data.data))

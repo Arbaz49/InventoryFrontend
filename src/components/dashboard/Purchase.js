@@ -112,7 +112,7 @@ function BasicModal() {
     try {
       let authToken = localStorage.getItem("token");
       const order = await axios.post(
-        "http://localhost:8000/payment/checkout",
+        "https://inventorybackend-otug.onrender.com/payment/checkout",
         { amount: Number(purchaseInfo.price) * Number(purchaseInfo.quantity) },
         {
           headers: { token: `Bearer ${authToken}` },
@@ -131,7 +131,7 @@ function BasicModal() {
         // callback_url:"http://localhost:8000/payment/verification",
         handler: function (response) {
           axios
-            .post("http://localhost:8000/payment/verification", response)
+            .post("https://inventorybackend-otug.onrender.com/payment/verification", response)
             .then((res) => {
               console.log(res);
             })
@@ -155,7 +155,7 @@ function BasicModal() {
       rzp1.open();
 
       const data = await axios.post(
-        "http://localhost:8000/purchase/newpurchase",
+        "https://inventorybackend-otug.onrender.com/purchase/newpurchase",
         purchaseInfo,
         {
           headers: { token: `Bearer ${authToken}` },
@@ -275,7 +275,7 @@ const Purchase = () => {
     const getdata = async () => {
       setLoading(true);
 
-      const data = await axios("http://localhost:8000/purchase/getallpurchase");
+      const data = await axios("https://inventorybackend-otug.onrender.com/purchase/getallpurchase");
       setpurchase(data.data.data);
       console.log(data.data.data);
       setLoading(false);

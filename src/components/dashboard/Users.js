@@ -39,7 +39,7 @@ const style = {
     console.log(id)
     try{
       let authToken=localStorage.getItem("token");
-      let update=await axios.delete(`http://localhost:8000/api/v1/auth/delete/${id}`,{headers:{token:`Bearer ${authToken}`} })
+      let update=await axios.delete(`https://inventorybackend-otug.onrender.com/api/v1/auth/delete/${id}`,{headers:{token:`Bearer ${authToken}`} })
       toast.success(update.data.message)
       dispatch(updateChange())
     }catch(e){
@@ -122,7 +122,7 @@ const handleAddUser=async()=>{
   try{
     let  authToken=localStorage.getItem('token');
     console.log(authToken)
-    const data=await axios.post("http://localhost:8000/api/v1/auth/register",userInfo,{
+    const data=await axios.post("https://inventorybackend-otug.onrender.com/api/v1/auth/register",userInfo,{
       token:`Bearer ${authToken}`,
       // const dispatch=useDispatch();
     })
@@ -226,7 +226,7 @@ const Users = () => {
   useEffect(()=>{
     const getdata=async()=>{
       setLoading(true)
-      const {data}=await axios("http://localhost:8000/api/v1/auth/allusers");
+      const {data}=await axios("https://inventorybackend-otug.onrender.com/api/v1/auth/allusers");
       console.log(data.data)
       setUsers(data.data);
       setLoading(false)

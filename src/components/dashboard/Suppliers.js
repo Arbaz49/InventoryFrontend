@@ -40,7 +40,7 @@ function BasicTable({ data }) {
     try {
       let authToken = localStorage.getItem("token");
       let update = await axios.delete(
-        `http://localhost:8000/supplier/delete/${id}`,
+        `https://inventorybackend-otug.onrender.com/supplier/delete/${id}`,
         { headers: { token: `Bearer ${authToken}` } }
       );
       toast.success(update.data.message);
@@ -137,7 +137,7 @@ function BasicModal() {
     try {
       let authToken = localStorage.getItem("token");
       const data = await axios.post(
-        "http://localhost:8000/supplier/newsupplier",
+        "https://inventorybackend-otug.onrender.com/supplier/newsupplier",
         supplierInfo,
         {
           headers: { token: `Bearer ${authToken}` },
@@ -271,7 +271,7 @@ const Suppliers = () => {
     const getdata = async () => {
       setLoading(true);
       const data = await axios(
-        "http://localhost:8000/supplier/getallsuppliers"
+        "https://inventorybackend-otug.onrender.com/supplier/getallsuppliers"
       );
       setsuppliers(data.data.data);
       console.log(data.data.data);

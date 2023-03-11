@@ -41,7 +41,7 @@ const handledelete = async (id) => {
   try {
     let authToken = localStorage.getItem("token");
     let update = await axios.delete(
-      `http://localhost:8000/product/delete/${id}`,
+      `https://inventorybackend-otug.onrender.com/product/delete/${id}`,
       { headers: { token: `Bearer ${authToken}` } }
     );
     toast.success(update.data.message);
@@ -141,7 +141,7 @@ function BasicModal() {
     try {
       let authToken = localStorage.getItem("token");
       const data = await axios.post(
-        "http://localhost:8000/product/addproduct",
+        "https://inventorybackend-otug.onrender.com/product/addproduct",
         productInfo,
         {
           headers: { token: `Bearer ${authToken}` },
@@ -256,7 +256,7 @@ const Products = () => {
     const getdata = async () => {
       // setLoading(true)
       setLoading(true);
-      const data = await axios("http://localhost:8000/product/getallproducts");
+      const data = await axios("https://inventorybackend-otug.onrender.com/product/getallproducts");
 
       setProducts(data.data.data);
       console.log(data.data.data);
