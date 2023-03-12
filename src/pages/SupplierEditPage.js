@@ -42,7 +42,7 @@ const SupplierEditPage = () => {
         const config = {
           headers: {token: `Bearer ${token}`} 
         };
-        let update=await axios.patch(`http://localhost:8000/supplier/update/${id}`,supplierInfo,config)
+        let update=await axios.patch(`https://inventorybackend-otug.onrender.com/supplier/update/${id}`,supplierInfo,config)
         toast.success(update.data.message)
         // console.log(update.data)
         setSupplierInfo({})

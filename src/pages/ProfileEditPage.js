@@ -37,7 +37,7 @@ getuser();
           const config = {
             headers: {token: `Bearer ${token}`} 
           };
-          let update=await axios.patch(`http://localhost:8000/api/v1/auth/update/${id}`,userinfo,config)
+          let update=await axios.patch(`https://inventorybackend-otug.onrender.com/api/v1/auth/update/${id}`,userinfo,config)
           toast.success(update.data.message)
           // console.log(update.data)
           setuserinfo({})
