@@ -23,7 +23,7 @@ const getdata=async()=>{
     const config = {
       headers: {token: `Bearer ${token}`} 
     };
-    const data=await axios.post(`http://localhost:8000/product/singleproduct/${id}`,{},config)
+    const data=await axios.post(`https://inventorybackend-otug.onrender.com/product/singleproduct/${id}`,{},config)
     setProductinfo(data.data.data);
     console.log(data.data)
   }catch(e){

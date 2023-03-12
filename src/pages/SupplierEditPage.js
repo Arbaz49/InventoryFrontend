@@ -23,7 +23,7 @@ const SupplierEditPage = () => {
         const config = {
           headers: {token: `Bearer ${token}`} 
         };
-        const data=await axios.post(`http://localhost:8000/supplier/supplier/${id}`,{},config)
+        const data=await axios.post(`https://inventorybackend-otug.onrender.com/supplier/supplier/${id}`,{},config)
         setSupplierInfo(data.data.data);
         console.log(data.data)
       }catch(e){
