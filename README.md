@@ -9,17 +9,17 @@ An inventory management system is a software application that allows businesses 
 
 ## Screenshots
 
-![Login Page](https://res.cloudinary.com/duktgzyxw/image/upload/v1680079970/ProjectsImages/inventoryLogin_p9wh7n.png)
+![Login Page](https://res.cloudinary.com/arbazcloud/image/upload/v1680079970/ProjectsImages/inventoryLogin_p9wh7n.png)
 Login page of the website.
 
-![dashboard page](https://res.cloudinary.com/duktgzyxw/image/upload/v1680080041/ProjectsImages/indashboard_wpkgxs.png)
+![dashboard page](https://res.cloudinary.com/arbazcloud/image/upload/v1680080041/ProjectsImages/indashboard_wpkgxs.png)
 After Login page of the website
 
 
-![crud page](https://res.cloudinary.com/duktgzyxw/image/upload/v1680080192/ProjectsImages/incrud_mypid1.png)
+![crud page](https://res.cloudinary.com/arbazcloud/image/upload/v1680080192/ProjectsImages/incrud_mypid1.png)
 Implemented CRUD operation Functionality
 
-![Payment page](https://res.cloudinary.com/duktgzyxw/image/upload/v1680080338/ProjectsImages/inpayment_xn2cr4.png)
+![Payment page](https://res.cloudinary.com/arbazcloud/image/upload/v1680080338/ProjectsImages/inpayment_xn2cr4.png)
 Integrated Payment Gateway for Payment options (Razorpay)
 
 
