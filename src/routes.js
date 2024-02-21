@@ -32,6 +32,7 @@ const routes =[
           path: "suppliers",
           element: <Suppliers />,
         },
+        
         {
           path: "purchase",
           element: <Purchase />,
