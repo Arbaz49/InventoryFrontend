@@ -11,55 +11,54 @@ import ProfileEditPage from "./pages/ProfileEditPage";
 import SupplierEditPage from "./pages/SupplierEditPage";
 import PaymentSuccess from "./PaymentSuccess";
 
-const routes =[
-    {
-      path: "/",
-      element: <App />,
-      // element: <Login />,
+const routes = [
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "",
+        element: <HomeDashboard />,
+      }, {
+        path: "users",
+        element: <Users />,
+      },
+      {
+        path: "products",
+        element: <Products />,
+      },
+      {
+        path: "suppliers",
+        element: <Suppliers />,
+      },
 
-      children: [
-        {
-          path: "",
-          element: <HomeDashboard />,
-        },{
-          path: "users",
-          element: <Users />,
-        },
-        {
-          path: "products",
-          element: <Products />,
-        },
-        {
-          path: "suppliers",
-          element: <Suppliers />,
-        },
-        
-        {
-          path: "purchase",
-          element: <Purchase />,
-        },
-        {
-          path:"/edituser/:id",
-          element:<ProfileEditPage/>
-        }
-        ,
-        {
-          path:"/editproduct/:id",
-          element:<ProductsEditPage/>
-        }
-        ,
-        {
-          path:"/editsupplier/:id",
-          element:<SupplierEditPage/>
-        }
-]},{
-  path:"/login",
-  element:<Login/>
-},{
-  path:`/paymentSuccess`,
-  element:<PaymentSuccess/>
-}
-  ]
+      {
+        path: "purchase",
+        element: <Purchase />,
+      },
+      {
+        path: "/edituser/:id",
+        element: <ProfileEditPage />
+      }
+      ,
+      {
+        path: "/editproduct/:id",
+        element: <ProductsEditPage />
+      }
+      ,
+      {
+        path: "/editsupplier/:id",
+        element: <SupplierEditPage />
+      }
+    ]
+  }, {
+    path: "/login",
+    element: <Login />
+  }, {
+    path: `/paymentSuccess`,
+    element: <PaymentSuccess />
+  }
+]
 
 
-  export {routes}
+export { routes }
