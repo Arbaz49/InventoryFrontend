@@ -257,7 +257,7 @@ const Products = () => {
       // setLoading(true)
       setLoading(true);
       const data = await axios("https://inventorybackend-otug.onrender.com/product/getallproducts");
-
+   
       setProducts(data.data.data);
       console.log(data.data.data);
       setLoading(false);
