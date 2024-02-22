@@ -1,6 +1,7 @@
 import App from "./App";
 import Alert from "./components/Alert";
 import Login from "./components/Auth/Login";
+import HomeDashboard from "./components/dashboard/HomeDashboard";
 import Products from "./components/dashboard/Products";
 import Purchase from "./components/dashboard/Purchase";
 import Suppliers from "./components/dashboard/Suppliers";
@@ -19,7 +20,7 @@ const routes =[
       children: [
         {
           path: "",
-          element: <Products />,
+          element: <HomeDashboard />,
         },{
           path: "users",
           element: <Users />,
