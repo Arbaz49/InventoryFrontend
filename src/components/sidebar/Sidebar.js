@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./sidebar.css";
 import HomeIcon from '@mui/icons-material/Home';
@@ -17,28 +17,30 @@ import { updateChange } from '../../Redux/AlertSlice'
 const Sidebar = () => {
   const dispatch=useDispatch()
 const navigate=useNavigate();
+const [user,setUser]=useState("")
 const update=JSON.parse(useSelector((state)=>state.AlertSlice.update));
 useEffect(()=>{
   const token=localStorage.getItem('token');
   if(!token){
     navigate("/login");
   }
-  // dispatch(updateChange())
 },[update])
+useEffect(()=>{
+  setUser(JSON.parse(localStorage.getItem("user")))
+},[])
 
   const handlelogout=()=>{
     localStorage.clear("token");
     navigate("/login")
     toast.success("logout successfully")
   }
-  const user=JSON.parse(useSelector((state)=>state.userSlice.userInfo));
-  console.log(user)
+ 
   return (
     
     <div className='sidebar'>
       <div style={{height:"100px",marginTop:"20px"}}><AccountCircleIcon style={{width:"100%",height:"90%",color:"white"}} /></div>
       <h3 style={{color:"white",textAlign:"center"}}>{user?.isAdmin?"Admin":"User"}</h3>
-      <Typography style={{color:"white",textAlign:"center"}}>ID : {user?._id}</Typography>
+      <Typography style={{color:"white",textAlign:"center"}}>Name : {user?.name||null}</Typography>
 
       <Button style={{color:"white"}} onClick={handlelogout}>Log Out</Button>
 
