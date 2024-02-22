@@ -39,7 +39,7 @@ const Login = () => {
               {/* <LockOpenIcon /> */}
             </Avatar>
             <Typography variant="h5" style={{ marginTop: "10px", fontWeight: "bold" }}>
-              Login Form
+              Login
             </Typography>
           </Grid>
           <Grid item style={{ padding: "10px" }}>
