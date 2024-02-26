@@ -18,7 +18,8 @@ const routes = [
     children: [
       {
         path: "",
-        element: <HomeDashboard />,
+        // element: <HomeDashboard />,
+        element: <Users />,
       }, {
         path: "users",
         element: <Users />,
