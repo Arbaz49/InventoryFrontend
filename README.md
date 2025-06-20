@@ -4,8 +4,7 @@ An inventory management system is a software application that allows businesses 
 
 ## Deployed Link
 <a href="https://inventory-frontend-flame.vercel.app/">Deployed Netlify Link</a>
-<p>email : test@gmail.com</p>
-<p>pass : test123</p>
+
 
 ## Screenshots
 
